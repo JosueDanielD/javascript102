@@ -25,14 +25,16 @@ const itemData = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    const select = document.getElementById('select');
-    const image = document.getElementById('image');
+    const select = document.getElementById('items');
+    const image = document.getElementById('displayImage');
     const photographer = document.getElementById('photographer');
     const description = document.getElementById('description');
     const score = document.getElementById('score');
-    const increaseBtn = document.getElementById('increaseBtn');
-    const decreaseBtn = document.getElementById('decreaseBtn');
+    const increaseBtn = document.getElementById('increaseScore');
+    const decreaseBtn = document.getElementById('decreaseScore');
 
+//limpiar el select antes de llenarlo:
+    select.innerHTML = '';
 //Llenar el selec con los nombre de los ítems:
 
     Object.entries(itemData).forEach(([key, item]) => {
@@ -48,9 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const item = itemData[key];
         if (!item) return;
         image.src = item.image;
-        photographer.textContent = item.photographer;
-        description.textContent = item.description;
-        score.textContent = item.score; 
+        photographer.value = item.photographer;
+        description.value = item.description;
+        score.value = item.score; 
     }
 
     //mostrar el primer item por defecto
@@ -65,15 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //aumentar puntaje:
     increaseBtn.addEventListener('click', () => {
-        const key = select.value;
+        const item = itemData[select.value];
         item.score++;
-        score.textContent = item.score;
+        score.value = item.score;
     });
 
     //disminuir puntaje:
     decreaseBtn.addEventListener('click', () => {
         const item = itemData[select.value];
         item.score--;
-        score.textContent = item.score;
+        score.value = item.score;
     });
 });
