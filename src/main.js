@@ -9,14 +9,14 @@ const itemData = {
         score: 42
     },
     item2: {
-        name: 'Finalista 2',
+        name: 'Finalista 02',
         image: 'https://picsum.photos/seed/beach/250/200',
         photographer: 'Jane Smith',
         description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         score: 84
     },
     item3: {
-        name: 'Finalista 3',
+        name: 'Finalista 03',
         image: 'https://picsum.photos/seed/mountain/250/200',
         photographer: 'Alice Johnson',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
